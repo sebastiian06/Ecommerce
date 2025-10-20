@@ -1,5 +1,4 @@
 "use client";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs, Autoplay } from "swiper/modules";
 
@@ -21,7 +20,11 @@ export const SlideShowProductMobile = ({ images, title, className }: Props) => {
   return (
     <div className={className}>
       <Swiper
-        navigation={true}
+        style={{
+          width:'100vw',
+          height:'500px'
+        }}
+        pagination
         autoplay={{delay:2500}}
         modules={[FreeMode, Navigation, Thumbs, Autoplay]}
         className="mySwiper2"
