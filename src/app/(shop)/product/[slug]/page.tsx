@@ -27,8 +27,7 @@ export default async function ({ params }: Props) {
       />
 
       {/*SLIDE SHOW DESKTOP*/ }
-      {/* SlideShow*/}
-
+      
       <div className="col-span-1 md:col-span-2">
         <SlideShowProduct 
         title={product.title}
