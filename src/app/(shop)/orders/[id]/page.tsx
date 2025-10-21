@@ -57,7 +57,9 @@ export default async function ({ params }: Props) {
                 <div>
                   <p>{product.title}</p>
                   <p>${product.price}</p>
-                  <p>$.{product.price} x 3</p>
+                  <p>
+                    <span className="font-bold">Subtotal: $.{product.price} x 3</span>
+                  </p>
                 </div>
               </div>
             ))}
