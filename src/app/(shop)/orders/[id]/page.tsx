@@ -12,41 +12,38 @@ const productsInCart = [
   initialData.products[2],
 ];
 
-interface Props{
-  params:{
-    id:string;
-  }
+interface Props {
+  params: {
+    id: string;
+  };
 }
 
-export default async function ({params}:Props) {
-  const {id} = await params;
+export default async function ({ params }: Props) {
+  const { id } = await params;
 
   return (
     <div className="flex justify-center items-center mb-72 px-10 sm:px-0">
       <div className="flex flex-col w-[1000px]">
         <Title title={`Orden # ${id}`} />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mt-5"> 
-          
-          {/* Carrito */}
-            <div className="flex flex-col mt-5">
-              
-              <div className={ 
-                clsx(
-                  "flex items-center rounded-lg py-2 px-3.5 text-xs font-bold text-white mb-5",
-                  {
-                    'bg-red-500': false,
-                    'bg-green-500': true
-                  }
-                )
-              }>
-                <IoCardOutline size={30} />
-                {/* <span className="mx-2">Pendiente de Pago</span> */}
-                <span className="mx-2">Pagada</span>
-              </div>
+        {/* Contenedor en 2 columnas */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mt-5">
+
+          {/* 🛒 Carrito */}
+          <div className="flex flex-col mt-5">
+            <div
+              className={clsx(
+                "flex items-center rounded-lg py-2 px-3.5 text-xs font-bold text-white mb-5",
+                {
+                  "bg-red-500": false,
+                  "bg-green-500": true,
+                }
+              )}
+            >
+              <IoCardOutline size={30} />
+              <span className="mx-2">Pagada</span>
             </div>
 
-            {/* Items */}
             {productsInCart.map((product) => (
               <div key={product.slug} className="flex mb-5">
                 <Image
@@ -66,7 +63,6 @@ export default async function ({params}:Props) {
             ))}
           </div>
 
-          {/* Checkout */}
           <div>
             <div className="bg-white rounded-xl shadow-xl p-7">
 
@@ -81,7 +77,6 @@ export default async function ({params}:Props) {
               </div>
 
               <div className="w-full h-0.5 rounded bg-gray-200 mb-10"></div>
-
 
               <h2 className="text-2xl mb-2">Resumen de la Orden</h2>
 
@@ -101,29 +96,24 @@ export default async function ({params}:Props) {
                 <span className="mt-5 text-2xl text-right">$115</span>
               </div>
 
-              <div className="mt-5 mb-2 w-full">
-                <p className="mb-5">
-                  <span className="text-xs">
-                    Al hacer click en "Colocar Orden", aceptas nuestros{" "}
-                    <a href="#" className="underline">
-                      {" "}
-                      términos y condiciones{" "}
-                    </a>{" "}
-                    <a href="#" className="underline">
-                      Política de Privacidad
-                    </a>
-                  </span>
-                </p>
-                <Link
-                  className="flex btn-primary justify-center"
-                  href="/orders/123"
+              <div className="flex flex-col mt-5">
+                <div
+                  className={clsx(
+                    "flex items-center rounded-lg py-2 px-3.5 text-xs font-bold text-white mb-5",
+                    {
+                      "bg-red-500": false,
+                      "bg-green-500": true,
+                    }
+                  )}
                 >
-                  Colocar orden
-                </Link>
+                  <IoCardOutline size={30} />
+                  <span className="mx-2">Pagada</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
   );
 }
