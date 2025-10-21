@@ -13,16 +13,13 @@ export default function CartPage() {
   return (
     <div className="flex justify-center items-center mb-72 px-10 sm:px-0">
       <div className="flex flex-col w-[1000px]">
-        {/* Cambiado: Carrito -> Verificar Ordenes */}
         <Title title="Verificar Ordenes" />
 
-        {/* Contenedor principal con dos columnas */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mt-5"> 
           
-          {/* Columna izquierda: productos */}
+          {/* Carrito */}
           <div>
             <div className="flex flex-col mb-5">
-              {/* Cambios solicitados */}
               <span className="text-xl">Ajustar Elementos</span>
               <Link href="/cart" className="underline mb-5">
                 Editar Carrito
@@ -49,11 +46,10 @@ export default function CartPage() {
             ))}
           </div>
 
-          {/* Columna derecha: Dirección + Resumen */}
+          {/* Checkout */}
           <div>
             <div className="bg-white rounded-xl shadow-xl p-7">
 
-              {/* ✅ Bloque nuevo agregado aquí */}
               <h2 className="text-2xl mb-2">Dirección de Entrega</h2>
               <div className="mb-10">
                 <p>Julian Quimbayo</p>
@@ -63,10 +59,9 @@ export default function CartPage() {
                 <p>Neiva - Huila</p>
                 <p>3157007683</p>
               </div>
-              {/* Divisor */}
+
               <div className="w-full h-0.5 rounded bg-gray-200 mb-10"></div>
 
-              {/* Resumen de la Orden */}
               <h2 className="text-2xl mb-2">Resumen de la Orden</h2>
 
               <div className="grid grid-cols-2">
@@ -86,11 +81,23 @@ export default function CartPage() {
               </div>
 
               <div className="mt-5 mb-2 w-full">
+                <p className="mb-5">
+                  <span className="text-xs">
+                    Al hacer click en "Colocar Orden", aceptas nuestros{" "}
+                    <a href="#" className="underline">
+                      {" "}
+                      términos y condiciones{" "}
+                    </a>{" "}
+                    <a href="#" className="underline">
+                      Política de Privacidad
+                    </a>
+                  </span>
+                </p>
                 <Link
                   className="flex btn-primary justify-center"
-                  href="/checkout/address"
+                  href="/orders/123"
                 >
-                  Checkout
+                  Colocar orden
                 </Link>
               </div>
             </div>
